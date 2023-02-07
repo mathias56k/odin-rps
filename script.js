@@ -1,4 +1,9 @@
+let pScore = 0;
+let cScore = 0;
+let round = 1
+
 let choice = ["rock", "paper", "scissors"];
+
 
 let playerSelection = prompt("Enter your choice:");
 let pSelectionLow = playerSelection.toLowerCase();
@@ -12,34 +17,54 @@ function getComputerChoice() {
 
 let cChoice = getComputerChoice();
 
+// Play a round
+function playRound(pChoice, cChoice){
+
 // Check for a draw and print
 if (pChoice === cChoice) {
-    console.log(`Draw! ${pChoice} and ${cChoice} are equal`);
+    return(`Draw! ${pChoice} and ${cChoice} are equal`);
 };
 
 // Check with player choice rock
 if (pChoice === "rock") {
     if (cChoice === "paper") {
-        console.log(`You lose :( ${cChoice} beats ${pChoice}.`);
+        cScore++
+        return(`You lose :( ${cChoice} beats ${pChoice}.`);
     } else if (cChoice === "scissors") {
-        console.log(`You win! ${pChoice} beats ${cChoice}.`);
+        pScore++
+        return(`You win! ${pChoice} beats ${cChoice}.`);
     }
 };
 
 // Check with player choice paper
 if (pChoice === "paper") {
     if (cChoice === "scissors") {
-        console.log(`You lose :( ${cChoice} beats ${pChoice}.`);
+        cScore++
+        return(`You lose :( ${cChoice} beats ${pChoice}.`);
     } else if (cChoice === "rock") {
-        console.log(`You win! ${pChoice} beats ${cChoice}.`);
+        pScore++
+        return(`You win! ${pChoice} beats ${cChoice}.`);
     }
 };
 
 // Check with player choice scissors
 if (pChoice === "scissors") {
     if (cChoice === "rock") {
-        console.log(`You lose :( ${cChoice} beats ${pChoice}.`);
+        cScore++
+        return(`You lose :( ${cChoice} beats ${pChoice}.`);
     } else if (cChoice === "paper") {
-        console.log(`You win! ${pChoice} beats ${cChoice}.`);
+        pScore++
+        return(`You win! ${pChoice} beats ${cChoice}.`);
     }
 };
+
+};
+
+// Play a game
+function game() {
+    console.log(playRound(pChoice, cChoice));
+    console.log(pScore);
+    console.log(cScore);
+}
+
+console.log(game());
