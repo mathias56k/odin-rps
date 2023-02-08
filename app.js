@@ -1,13 +1,30 @@
+// Set default player and computer scores to 0
+
+// Create an array for the computer to choose from
+
+// Create a func for the players choice 
+
+// Create a func for the computers choice
+
+// Create a func that plays a round of the game
+// Add computer win, player win and draw into the func with if
+
+// Create a func that checks for a winner and if there is a winner then who won, return result
+
+// Create a func that calls games until someone wins
+
 let pScore = 0;
 let cScore = 0;
-let round = 1
 
 let choice = ["rock", "paper", "scissors"];
 
 
-let playerSelection = prompt("Enter your choice:");
-let pSelectionLow = playerSelection.toLowerCase();
-let pChoice = pSelectionLow;
+function playerChoice() {
+    let playerSelection = prompt("Enter your choice:");
+    let pSelectionLow = playerSelection.toLowerCase();
+    let pChoice = pSelectionLow;
+    return pChoice;
+};
 
 function getComputerChoice() {
     let randNum = Math.floor(Math.random() * choice.length);
@@ -23,6 +40,9 @@ function playRound(pChoice, cChoice){
 // Check for a draw and print
 if (pChoice === cChoice) {
     return(`Draw! ${pChoice} and ${cChoice} are equal`);
+    cScore++
+    pScore++
+    round++
 };
 
 // Check with player choice rock
@@ -34,6 +54,7 @@ if (pChoice === "rock") {
         pScore++
         return(`You win! ${pChoice} beats ${cChoice}.`);
     }
+    round++
 };
 
 // Check with player choice paper
@@ -45,6 +66,7 @@ if (pChoice === "paper") {
         pScore++
         return(`You win! ${pChoice} beats ${cChoice}.`);
     }
+    round++
 };
 
 // Check with player choice scissors
@@ -56,15 +78,34 @@ if (pChoice === "scissors") {
         pScore++
         return(`You win! ${pChoice} beats ${cChoice}.`);
     }
+    round++
 };
 
 };
 
-// Play a game
-function game() {
-    console.log(playRound(pChoice, cChoice));
-    console.log(pScore);
-    console.log(cScore);
+// Check For Winner
+let checkForWinner = () => {
+    if (pScore == 5) {
+        return 'You Win! :)';
+    } else if (cScore == 5) {
+        return 'You Lose :(';
+    }
 }
+
+let checkIfWin = () => {
+    if (pScore == 5 || cScore == 5) {
+        return true;
+    }
+}
+
+// Play A Game
+function game() {
+    for () {
+    console.log(playRound(playerChoice(), cChoice));
+    console.log(`Round ${round}`);
+    console.log(`Player Score: ${pScore}`);
+    console.log(`Computer Score: ${cScore}`);
+    };
+};
 
 console.log(game());
