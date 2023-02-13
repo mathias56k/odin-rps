@@ -1,136 +1,23 @@
-// Set default player and computer scores to 0
+// Set the scores of the player and computer to 0
 let playerScore = 0;
 let computerScore = 0;
-let round = 0;
-// Create an array for the computer to choose from
-let compChoiceArray = ["rock", "paper", "scissors"];
-// Create a func for the players choice 
-let playerChoice = () => {
-    let playerWriting = prompt("Choose your move:");
-    let playerChoiceLower = playerWriting.toLowerCase();
-    if (playerChoiceLower == "rock" || playerChoiceLower == "paper" || playerChoiceLower == "scissors") {
-        return playerChoiceLower;
-    } else {
-        return `"${playerChoiceLower}" is not accepted, please choose from "rock", "paper" or "scissors".`
-    }
+
+// Array of options the computer can choose from
+let choicesForPC = ['rock', 'paper', 'scissors'];
+
+// Function that makes the computer choose from the provided array
+function computerChoice() {
+    let randomNum = Math.floor(Math.random() * choicesForPC.length);
+    let cChoice = choicesForPC[randomNum];
+    return cChoice;
 };
-// Create a func for the computers choice
-let computerChoice = () => {
-    let randomNum = Math.floor(Math.random() * compChoiceArray.length);
-    let computerChoiceFromArray = compChoiceArray[randomNum];
-    return computerChoiceFromArray;
+
+// Function that gets the players input to the prompt
+function playerChoice() {
+    let playerSelection = prompt('Enter your choice:');
+    let pChoice = playerSelection.toLowerCase();         // Format the players choice to lowercase
+    return pChoice;
 };
-// Create a func that plays a round of the game
-// Add computer win, player win and draw into the func with if
-let playRound = (playerChoiceLower, computerChoiceFromArray) => {
 
-    return playerChoiceLower;
-    return computerChoiceFromArray;
-
-};
-// Create a func that checks for a winner and if there is a winner then who won, return result
-
-// Create a func that calls games until someone wins
-
-
-
-
-//! --- !\\
-
-
-//let pScore = 0;
-//let cScore = 0;
-//
-//let choice = ["rock", "paper", "scissors"];
-//
-//
-//function playerChoice() {
-//    let playerSelection = prompt("Enter your choice:");
-//    let pSelectionLow = playerSelection.toLowerCase();
-//    let pChoice = pSelectionLow;
-//    return pChoice;
-//};
-//
-//function getComputerChoice() {
-//    let randNum = Math.floor(Math.random() * choice.length);
-//    let compChoice = choice[randNum];
-//    return compChoice;
-//};
-//
-//let cChoice = getComputerChoice();
-//
-//// Play a round
-//function playRound(pChoice, cChoice){
-//
-//// Check for a draw and print
-//if (pChoice === cChoice) {
-//    return(`Draw! ${pChoice} and ${cChoice} are equal`);
-//    cScore++
-//    pScore++
-//    round++
-//};
-//
-//// Check with player choice rock
-//if (pChoice === "rock") {
-//    if (cChoice === "paper") {
-//        cScore++
-//        return(`You lose :( ${cChoice} beats ${pChoice}.`);
-//    } else if (cChoice === "scissors") {
-//        pScore++
-//        return(`You win! ${pChoice} beats ${cChoice}.`);
-//    }
-//    round++
-//};
-//
-//// Check with player choice paper
-//if (pChoice === "paper") {
-//    if (cChoice === "scissors") {
-//        cScore++
-//        return(`You lose :( ${cChoice} beats ${pChoice}.`);
-//    } else if (cChoice === "rock") {
-//        pScore++
-//        return(`You win! ${pChoice} beats ${cChoice}.`);
-//    }
-//    round++
-//};
-//
-//// Check with player choice scissors
-//if (pChoice === "scissors") {
-//    if (cChoice === "rock") {
-//        cScore++
-//        return(`You lose :( ${cChoice} beats ${pChoice}.`);
-//    } else if (cChoice === "paper") {
-//        pScore++
-//        return(`You win! ${pChoice} beats ${cChoice}.`);
-//    }
-//    round++
-//};
-//
-//};
-//
-//// Check For Winner
-//let checkForWinner = () => {
-//    if (pScore == 5) {
-//        return 'You Win! :)';
-//    } else if (cScore == 5) {
-//        return 'You Lose :(';
-//    }
-//}
-//
-//let checkIfWin = () => {
-//    if (pScore == 5 || cScore == 5) {
-//        return true;
-//    }
-//}
-//
-//// Play A Game
-//function game() {
-//    for () {
-//    console.log(playRound(playerChoice(), cChoice));
-//    console.log(`Round ${round}`);
-//    console.log(`Player Score: ${pScore}`);
-//    console.log(`Computer Score: ${cScore}`);
-//    };
-//};
-//
-//console.log(game());
+ console.log(playerChoice());
+ console.log(computerChoice());
