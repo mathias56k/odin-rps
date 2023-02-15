@@ -1,1 +1,1 @@
-# odin_rps
+This project is a part of <a class="link-hov link-in-text" href="https://www.theodinproject.com/" target="_blank">The Odin Project</a>. The project mostly consists of JavaScript programming. The main goal is to have the player play rock paper scissors against a computer. The project is in progress because later in the course I will need to update the page with CSS and add more updates into JavaScript.
